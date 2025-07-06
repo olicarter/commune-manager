@@ -5,18 +5,27 @@
   "scripts": {
     "start": "nest start",
     "start:dev": "nest start --watch",
-    "build": "nest build"
+    "build": "nest build",
+    "test": "jest"
   },
   "dependencies": {
     "@nestjs/common": "latest",
     "@nestjs/core": "latest",
     "@nestjs/platform-express": "latest",
     "reflect-metadata": "latest",
-    "rxjs": "latest"
+    "rxjs": "latest",
+    "@nestjs/typeorm": "latest",
+    "typeorm": "latest",
+    "pg": "latest"
   },
   "devDependencies": {
     "@nestjs/cli": "latest",
     "typescript": "latest",
-    "ts-node": "latest"
+    "ts-node": "latest",
+    "jest": "latest",
+    "ts-jest": "latest",
+    "@types/jest": "latest",
+    "supertest": "latest",
+    "@types/supertest": "latest"
   }
 }
