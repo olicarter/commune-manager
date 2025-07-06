@@ -1,0 +1,11 @@
+{
+  "name": "commune-manager",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "test": "npm --workspaces --if-present test"
+  }
+}
