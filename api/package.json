@@ -12,7 +12,10 @@
     "@nestjs/core": "latest",
     "@nestjs/platform-express": "latest",
     "reflect-metadata": "latest",
-    "rxjs": "latest"
+    "rxjs": "latest",
+    "@nestjs/typeorm": "latest",
+    "typeorm": "latest",
+    "pg": "latest"
   },
   "devDependencies": {
     "@nestjs/cli": "latest",
