@@ -7,6 +7,7 @@ import { CommunityModule } from './community.module';
 
 describe('CommunityController (e2e)', () => {
   let app: INestApplication;
+  let createdId: number;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -39,5 +40,14 @@ describe('CommunityController (e2e)', () => {
     expect(res.body).toEqual(
       expect.objectContaining({ id: expect.any(Number), name: 'Test Community' }),
     );
+    createdId = res.body.id;
+  });
+
+  it('/communities/:id (GET)', async () => {
+    const res = await request(app.getHttpServer())
+      .get(`/communities/${createdId}`)
+      .expect(200);
+
+    expect(res.body).toEqual({ id: createdId, name: 'Test Community' });
   });
 });
