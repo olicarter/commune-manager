@@ -1,3 +1,6 @@
 # Commune Manager
 
-A platform for managing communities that live in close proximity to one another.
+A monorepo containing both the frontend and backend applications.
+
+- `web` – Next.js frontend
+- `api` – NestJS backend
