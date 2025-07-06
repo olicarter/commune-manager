@@ -15,4 +15,8 @@ export class CommunityService {
     const community = this.communityRepository.create(dto);
     return this.communityRepository.save(community);
   }
+
+  findOne(id: number): Promise<Community | null> {
+    return this.communityRepository.findOneBy({ id });
+  }
 }
