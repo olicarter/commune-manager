@@ -4,16 +4,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Community } from './community/community.entity';
 import { CommunityModule } from './community/community.module';
+import { DATABASE_URL } from './config/env';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'commune',
+      url: DATABASE_URL,
       entities: [Community],
       synchronize: false,
     }),

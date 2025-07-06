@@ -16,7 +16,8 @@
     "rxjs": "latest",
     "@nestjs/typeorm": "latest",
     "typeorm": "latest",
-    "pg": "latest"
+    "pg": "latest",
+    "zod": "latest"
   },
   "devDependencies": {
     "@nestjs/cli": "latest",
@@ -26,6 +27,8 @@
     "ts-jest": "latest",
     "@types/jest": "latest",
     "supertest": "latest",
-    "@types/supertest": "latest"
+    "@types/supertest": "latest",
+    "sqlite3": "latest",
+    "@nestjs/testing": "latest"
   }
 }
