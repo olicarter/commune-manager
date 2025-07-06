@@ -12,8 +12,6 @@ be managed together.
 ## Development
 
 Backend development uses the NestJS framework and Jest for testing.
-Run their CLI commands normally (e.g. `nest start`, `jest`), as they are
-installed as part of the development setup.
 
 Run `npm test` from the repository root to execute the `test` script in
 all workspaces. It leverages npm's workspace mode to run each package's
