@@ -1,18 +1,17 @@
 # Commune Manager
 
-A monorepo containing both the frontend and backend applications.
+A monorepo containing a Next.js frontend backed by InstantDB.
 
-- `web` – Next.js frontend
-- `api` – NestJS backend
+- `web` – Next.js frontend using InstantDB
 
 This repository is configured as an **npm workspace**. The root
-`package.json` lists both `api` and `web` as workspaces so dependencies can
+`package.json` lists `web` as a workspace so dependencies can
 be managed together.
 
 ## Development
 
-Backend development uses the NestJS framework and Jest for testing.
+The frontend connects directly to InstantDB. Set the environment variable
+`NEXT_PUBLIC_INSTANT_APP_ID` to the app ID for your InstantDB project.
 
 Run `npm test` from the repository root to execute the `test` script in
-all workspaces. It leverages npm's workspace mode to run each package's
-tests if the script is present.
+all workspaces (currently only `web`).

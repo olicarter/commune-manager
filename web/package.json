@@ -12,7 +12,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "zod": "latest"
+    "zod": "latest",
+    "@instantdb/react": "latest"
   },
   "devDependencies": {
     "@types/node": "24.0.10",

@@ -1,6 +1,6 @@
 'use client';
 import { useState, FormEvent } from 'react';
-import { NEXT_PUBLIC_API_URL } from '@/config/env';
+import { db, id } from '@/lib/db';
 
 export default function NewCommunityPage() {
   const [name, setName] = useState('');
@@ -10,12 +10,7 @@ export default function NewCommunityPage() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/communities`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name }),
-      });
-      if (!res.ok) throw new Error('Request failed');
+      await db.transact(db.tx.communities[id()].update({ name }));
       setStatus('success');
       setName('');
     } catch (err) {

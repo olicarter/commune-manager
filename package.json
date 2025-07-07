@@ -2,7 +2,6 @@
   "name": "commune-manager",
   "private": true,
   "workspaces": [
-    "api",
     "web"
   ],
   "scripts": {
