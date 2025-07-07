@@ -7,6 +7,8 @@ export default function Page() {
       <Link href="/communities/new">Create Community</Link>
       <br />
       <Link href="/communities">View Communities</Link>
+      <br />
+      <Link href="/profile">Edit Profile</Link>
     </div>
   );
 }
