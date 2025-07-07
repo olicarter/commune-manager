@@ -6,6 +6,10 @@ const _schema = i.schema({
       name: i.string().indexed(),
     }),
     members: i.entity({}),
+    profiles: i.entity({
+      name: i.string(),
+      displayName: i.string(),
+    }),
   },
   links: {
     memberUser: {
@@ -15,6 +19,14 @@ const _schema = i.schema({
     communityMembers: {
       forward: { on: 'communities', has: 'many', label: 'members' },
       reverse: { on: 'members', has: 'many', label: 'communities' },
+    },
+    profileUser: {
+      forward: { on: 'profiles', has: 'one', label: '$user' },
+      reverse: { on: '$users' as any, has: 'one', label: 'profile' },
+    },
+    profileAvatar: {
+      forward: { on: 'profiles', has: 'one', label: 'avatar' },
+      reverse: { on: '$files' as any, has: 'one', label: 'profile' },
     },
   },
 });

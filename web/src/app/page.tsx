@@ -9,6 +9,8 @@ export default function Page() {
       <Link href="/communities">View Communities</Link>
       <br />
       <Link href="/communities/invite">Invite Member</Link>
+      <br />
+      <Link href="/profile">My Profile</Link>
     </div>
   );
 }
