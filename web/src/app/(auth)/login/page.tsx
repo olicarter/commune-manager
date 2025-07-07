@@ -1,5 +1,6 @@
 'use client';
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { db } from '@/lib/db';
 
 export default function LoginPage() {
@@ -7,6 +8,7 @@ export default function LoginPage() {
   const [code, setCode] = useState('');
   const [step, setStep] = useState<'email' | 'code'>('email');
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
+  const router = useRouter();
 
   async function handleSendCode(e: FormEvent) {
     e.preventDefault();
@@ -25,6 +27,7 @@ export default function LoginPage() {
     setStatus('loading');
     try {
       await db.auth.signInWithMagicCode({ email, code });
+      router.push('/');
     } catch (err) {
       setStatus('error');
     }
