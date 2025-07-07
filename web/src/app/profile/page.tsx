@@ -33,6 +33,7 @@ export default function ProfilePage() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!user) return;
     if (profile) {
       await db.transact(db.tx.profiles[profile.id].update({ name, displayName }));
     } else {
@@ -47,7 +48,7 @@ export default function ProfilePage() {
 
   async function handleAvatarChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
-    if (!file || !profile) return;
+    if (!file || !profile || !user) return;
     setAvatarUploading(true);
     try {
       const path = `${user.id}/avatar`;
@@ -79,7 +80,7 @@ export default function ProfilePage() {
       <div style={{ marginTop: '1rem' }}>
         <h2>Avatar</h2>
         {profile?.avatar ? (
-          <img src={profile.avatar.url} alt="avatar" width={120} />
+          <img src={String(profile.avatar.url)} alt="avatar" width={120} />
         ) : (
           <p>No avatar uploaded.</p>
         )}
