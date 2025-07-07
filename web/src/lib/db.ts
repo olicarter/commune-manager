@@ -1,4 +1,4 @@
-import { init, id } from '@instantdb/react';
+import { init, id, lookup } from '@instantdb/react';
 import schema from '../../instant.schema';
 
 export const db = init({
@@ -6,4 +6,4 @@ export const db = init({
   schema,
 });
 
-export { id };
+export { id, lookup };
